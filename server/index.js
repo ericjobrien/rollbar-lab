@@ -33,7 +33,7 @@ app.post('/api/movieTitle', (req, res) => {
     if(index === -1 && title !== ''){
         students.push(title)
         rollbar.log('Movie added successfully', {author: 'Jim', type: 'manual'})
-        res.status(200).send(students)
+        res.status(200).send(movies)
     } else if (title === ''){
         rollbar.error('No movie title given')
         res.status(400).send('must provide a movie title.')
