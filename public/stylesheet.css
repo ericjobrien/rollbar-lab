@@ -1,3 +1,13 @@
 body {
     background-color: cadetblue;
 }
+
+aside {
+    padding: 10px;
+    background-color: lightcoral;
+    color: darkslategray;
+    border-radius: 10px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
