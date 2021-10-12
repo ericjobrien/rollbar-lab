@@ -15,5 +15,29 @@
         <button>Add Movie</button>
     </form>
     <section></section>
+    <script>
+
+        const movieTitle = document.querySelector('input');
+        const form = document.querySelector('form');
+        const movieBtn = document.querySelector('button');
+        const container = document.querySelector('section')
+
+        function handlerFunciton(e) { 
+            e.preventDefault();
+            axios.post('/api/movieTitle', { title: movieTitle.value })
+            .then( res => {
+                container.innerHTML = '';
+                movieTitle.value = '';
+
+                res.data.forEach(movie => {
+                    container.innerHTML += `<p>${movie}</p>`
+                })
+            })
+            .catch(err => {
+                movieTitle.value = ''
+            })
+
+    }
+    </script>
 </body>
 </html>

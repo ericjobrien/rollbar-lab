@@ -21,6 +21,28 @@ app.get('/', (req, res) => {
 
 app.use('/style', express.static(path.join(__dirname, '../public/stylesheet.css')));
 rollbar.log('Hello rollbar!')
+
+let movies = [];
+
+app.post('/api/movieTitle', (req, res) => {
+    let { title } = req.body
+    title = title.trim();
+
+    const index = movies.findIndex(movieTitle => movieTitle === title)
+
+    if(index === -1 && title !== ''){
+        students.push(title)
+        rollbar.log('Movie added successfully', {author: 'Jim', type: 'manual'})
+        res.status(200).send(students)
+    } else if (title === ''){
+        rollbar.error('No movie title given')
+        res.status(400).send('must provide a movie title.')
+    } else {
+        rollbar.error('movie already exists')
+        res.status(400).send('movie already exists')
+    }
+})
+
 const port = process.env.PORT || 4404;
 
 app.listen(port, () => { console.log(`Server is up on ${port}`)});
