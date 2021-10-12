@@ -15,11 +15,11 @@ app.use(rollbar.errorHandler());
 
 
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, '/public/index.html'));
+    res.sendFile(path.join(__dirname, '../public/index.html'));
     rollbar.info('html file served successfully');
 });
 
-app.use('/style', express.static(path.join(__dirname, './public/stlyesheet.css')));
+app.use('/style', express.static(path.join(__dirname, '../public/stlyesheet.css')));
 
 const port = process.env.PORT || 4404;
 
