@@ -24,7 +24,7 @@
 
         function handlerFunciton(e) { 
             e.preventDefault();
-            axios.post('/api/movieTitle', { title: movieTitle.value })
+            axios.post('/api/movieTitle', { title: movieTitle.value, })
             .then( res => {
                 container.innerHTML = '';
                 movieTitle.value = '';

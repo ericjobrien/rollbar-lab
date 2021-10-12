@@ -28,7 +28,7 @@ app.post('/api/movieTitle', (req, res) => {
     let { title } = req.body
     title = title.trim();
 
-    const index = movies.findIndex(movieTitle => movieTitle === title)
+    const index = movies.findIndex(movie => movie === title)
 
     if(index === -1 && title !== ''){
         students.push(title)
