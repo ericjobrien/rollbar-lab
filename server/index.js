@@ -20,7 +20,7 @@ app.get('/', (req, res) => {
 });
 
 app.use('/style', express.static(path.join(__dirname, '../public/stylesheet.css')));
-
+rollbar.log('Hello rollbar!')
 const port = process.env.PORT || 4404;
 
 app.listen(port, () => { console.log(`Server is up on ${port}`)});
