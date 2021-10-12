@@ -19,7 +19,7 @@ app.get('/', (req, res) => {
     rollbar.info('html file served successfully');
 });
 
-app.use('/style', express.static(path.join(__dirname, '../public/stlyesheet.css')));
+app.use('/stylesheet.css', express.static(path.join(__dirname, '../public/stlyesheet.css')));
 
 const port = process.env.PORT || 4404;
 
