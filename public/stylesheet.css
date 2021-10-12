@@ -1,5 +1,7 @@
 body {
     background-color: cadetblue;
+    justify-content: center;
+    margin-top: 20vh;
 }
 
 aside {
@@ -11,3 +13,4 @@ aside {
     top: 10px;
     right: 10px;
 }
+
