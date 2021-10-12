@@ -31,7 +31,7 @@ app.post('/api/movieTitle', (req, res) => {
     const index = movies.findIndex(movie => movie === title)
 
     if(index === -1 && title !== ''){
-        students.push(title)
+        movies.push(title)
         rollbar.log('Movie added successfully', {author: 'Jim', type: 'manual'})
         res.status(200).send(movies)
     } else if (title === ''){
